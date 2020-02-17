@@ -14,14 +14,11 @@ export default class Rooms extends React.Component{
     }        
 
     render(){
-        const sliderTitle = "Best Service!";
-        const sliderDescription = "Here in Hotel Karlton we provide five starts services.";
-        const sliderButtonLabel = "Our Services";
         
         return(
             <main>
                 <div className="container">
-                    <Slider title={sliderTitle} description={sliderDescription} buttonLabel={sliderButtonLabel} buttonURL="/" />
+                    <Slider infoType="services"/>
                     <Section title="Search Room">
                         <RoomsFilters filterMethod={this.handleRoomsFilters} currentFilters={this.state.currentFilters} clearFiltersMethod={this.handleClearFilters}/>
                         <RoomsList data={ this.filterRooms}/>

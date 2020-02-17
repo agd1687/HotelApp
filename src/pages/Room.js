@@ -19,17 +19,13 @@ function getRoomDataFromProps(props){
     // eslint-disable-next-line
     const roomData = props.arrayRooms.find((room) => room.infoData.id == props.match.params.roomId);
     
-    const sliderTitle = "25% OFF!";
-    const sliderDescription = "Valentine's Day is this Friday and to help celebrate save 25% in our rooms this month.";
-    const sliderButtonLabel = "Our Rooms";
-    
     if(!roomData){
         return <h1 className="text-white">Loading...</h1>;
     }
 
     return (
         <>
-            <Slider title={sliderTitle} description={sliderDescription} buttonLabel={sliderButtonLabel} buttonURL="/rooms" />
+            <Slider infoType="rooms"/>
             <Section title={roomData.infoData.label}>
                 <GalleryPhotos data={roomData.visualData}/>
                 <RoomDetails data={roomData.infoData}/> 
