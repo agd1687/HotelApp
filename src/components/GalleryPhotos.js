@@ -8,15 +8,15 @@ export default function GalleryPhotos({data:{photos}}){
                     {photos.map((photo, index) => {
                         const active = photo === photos[0] ? 'active' : '';
                         return(
-                            <li data-target="#carouselExampleIndicators" data-slide-to={index} className={active}></li>
+                            <li key={index} data-target="#carouselExampleIndicators" data-slide-to={index} className={active}></li>
                         );
                     })}
                 </ol>
                 <div className="carousel-inner">
-                    {photos.map((photo) => {
+                    {photos.map((photo, index) => {
                         const active = photo === photos[0] ? 'active' : '';
                         return(
-                            <div className={`carousel-item ${active}`}>
+                            <div key={index} className={`carousel-item ${active}`}>
                                 <img src={photo} className="d-block w-100" alt="..."/>
                             </div>
                         );
